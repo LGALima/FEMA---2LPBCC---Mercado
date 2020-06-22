@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mercado_Thay_and_Lusca.CAMADAS.MODEL
 {
+    // Modelo mapeado de produtos
     public class Produto
     {
         public int id { get; set; }
