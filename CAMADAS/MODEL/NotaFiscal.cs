@@ -14,6 +14,5 @@ namespace Mercado_Thay_and_Lusca.CAMADAS.MODEL
 
         public DateTime data { get; set; }
 
-
     }
 }

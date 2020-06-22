@@ -16,5 +16,7 @@ namespace Mercado_Thay_and_Lusca.CAMADAS.MODEL
         public string nome { get; set; }
 
         public string isAdm { get; set; }
+
+        public string imagem { get; set; }
     }
 }

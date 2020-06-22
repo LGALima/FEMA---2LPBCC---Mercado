@@ -20,5 +20,7 @@ namespace Mercado_Thay_and_Lusca.CAMADAS.MODEL
         public int quantidadeEstoque { get; set; }
 
         public float preco { get; set; }
+
+        public string imagem { get; set; }
     }
 }

@@ -19,5 +19,7 @@ namespace Mercado_Thay_and_Lusca.CAMADAS.MODEL
         public string endereco { get; set; }
 
         public float saldo { get; set; }
+
+        public string imagem { get; set; }
     }
 }
