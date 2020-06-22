@@ -1,0 +1,9 @@
+C:\Tudo\Fema\2020\almir\06-29 - Trabalho .net mercadin\Mercado Thay and Lusca\bin\Debug\Mercado Thay and Lusca.exe.config
+C:\Tudo\Fema\2020\almir\06-29 - Trabalho .net mercadin\Mercado Thay and Lusca\bin\Debug\Mercado Thay and Lusca.exe
+C:\Tudo\Fema\2020\almir\06-29 - Trabalho .net mercadin\Mercado Thay and Lusca\bin\Debug\Mercado Thay and Lusca.pdb
+C:\Tudo\Fema\2020\almir\06-29 - Trabalho .net mercadin\Mercado Thay and Lusca\obj\Debug\Mercado Thay and Lusca.csprojAssemblyReference.cache
+C:\Tudo\Fema\2020\almir\06-29 - Trabalho .net mercadin\Mercado Thay and Lusca\obj\Debug\Mercado_Thay_and_Lusca.Properties.Resources.resources
+C:\Tudo\Fema\2020\almir\06-29 - Trabalho .net mercadin\Mercado Thay and Lusca\obj\Debug\Mercado Thay and Lusca.csproj.GenerateResource.cache
+C:\Tudo\Fema\2020\almir\06-29 - Trabalho .net mercadin\Mercado Thay and Lusca\obj\Debug\Mercado Thay and Lusca.csproj.CoreCompileInputs.cache
+C:\Tudo\Fema\2020\almir\06-29 - Trabalho .net mercadin\Mercado Thay and Lusca\obj\Debug\Mercado Thay and Lusca.exe
+C:\Tudo\Fema\2020\almir\06-29 - Trabalho .net mercadin\Mercado Thay and Lusca\obj\Debug\Mercado Thay and Lusca.pdb
