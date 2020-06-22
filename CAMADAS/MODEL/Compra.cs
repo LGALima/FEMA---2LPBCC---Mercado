@@ -8,7 +8,9 @@ namespace Mercado_Thay_and_Lusca.CAMADAS.MODEL
 {
     public class Compra
     {
-        public NotaFiscal NotaFiscal { get; set; }
+        public int id { get; set; }
+
+        public NotaFiscal notaFiscal { get; set; }
 
         public Produto produto { get; set; }
 
