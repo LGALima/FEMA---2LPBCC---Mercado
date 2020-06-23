@@ -29,7 +29,7 @@ namespace Mercado_Thay_and_Lusca.CAMADAS.DAL
             {
                 conexao.Open();
                 cmd.ExecuteNonQuery();
-                imagem.Save("C:\\Tudo\\Fema\\2020\\almir\\06-29 - Trabalho .net mercadin\\Mercado Thay and Lusca\\Imagens\\Clientes\\" + cliente.imagem);
+                imagem.Save(Conexao.getPathImagens() + @"Clientes\" + cliente.imagem);
             }
             catch
             {

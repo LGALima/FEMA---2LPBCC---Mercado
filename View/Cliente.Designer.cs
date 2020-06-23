@@ -35,14 +35,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.usuarioTxt = new System.Windows.Forms.TextBox();
+            this.senhaTxt = new System.Windows.Forms.TextBox();
+            this.nomeTxt = new System.Windows.Forms.TextBox();
+            this.enderecoTxt = new System.Windows.Forms.TextBox();
+            this.saldoTxt = new System.Windows.Forms.TextBox();
             this.fotoClientePb = new System.Windows.Forms.PictureBox();
             this.carregarImagemCliente = new System.Windows.Forms.OpenFileDialog();
             this.carregarImagemBtn = new System.Windows.Forms.Button();
+            this.cadastrarBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.fotoClientePb)).BeginInit();
             this.SuspendLayout();
             // 
@@ -117,40 +118,40 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "CADASTRO DE CLIENTE";
             // 
-            // textBox1
+            // usuarioTxt
             // 
-            this.textBox1.Location = new System.Drawing.Point(155, 106);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(180, 20);
-            this.textBox1.TabIndex = 7;
+            this.usuarioTxt.Location = new System.Drawing.Point(155, 106);
+            this.usuarioTxt.Name = "usuarioTxt";
+            this.usuarioTxt.Size = new System.Drawing.Size(180, 20);
+            this.usuarioTxt.TabIndex = 7;
             // 
-            // textBox2
+            // senhaTxt
             // 
-            this.textBox2.Location = new System.Drawing.Point(155, 146);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(180, 20);
-            this.textBox2.TabIndex = 8;
+            this.senhaTxt.Location = new System.Drawing.Point(155, 146);
+            this.senhaTxt.Name = "senhaTxt";
+            this.senhaTxt.Size = new System.Drawing.Size(180, 20);
+            this.senhaTxt.TabIndex = 8;
             // 
-            // textBox3
+            // nomeTxt
             // 
-            this.textBox3.Location = new System.Drawing.Point(155, 186);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(180, 20);
-            this.textBox3.TabIndex = 9;
+            this.nomeTxt.Location = new System.Drawing.Point(155, 186);
+            this.nomeTxt.Name = "nomeTxt";
+            this.nomeTxt.Size = new System.Drawing.Size(180, 20);
+            this.nomeTxt.TabIndex = 9;
             // 
-            // textBox4
+            // enderecoTxt
             // 
-            this.textBox4.Location = new System.Drawing.Point(155, 226);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(180, 20);
-            this.textBox4.TabIndex = 10;
+            this.enderecoTxt.Location = new System.Drawing.Point(155, 226);
+            this.enderecoTxt.Name = "enderecoTxt";
+            this.enderecoTxt.Size = new System.Drawing.Size(180, 20);
+            this.enderecoTxt.TabIndex = 10;
             // 
-            // textBox5
+            // saldoTxt
             // 
-            this.textBox5.Location = new System.Drawing.Point(155, 266);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(67, 20);
-            this.textBox5.TabIndex = 11;
+            this.saldoTxt.Location = new System.Drawing.Point(155, 266);
+            this.saldoTxt.Name = "saldoTxt";
+            this.saldoTxt.Size = new System.Drawing.Size(67, 20);
+            this.saldoTxt.TabIndex = 11;
             // 
             // fotoClientePb
             // 
@@ -160,6 +161,7 @@
             this.fotoClientePb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.fotoClientePb.TabIndex = 12;
             this.fotoClientePb.TabStop = false;
+            this.fotoClientePb.Click += new System.EventHandler(this.fotoClientePb_Click);
             // 
             // carregarImagemCliente
             // 
@@ -175,19 +177,30 @@
             this.carregarImagemBtn.UseVisualStyleBackColor = true;
             this.carregarImagemBtn.Click += new System.EventHandler(this.carregarImagemBtn_Click);
             // 
+            // cadastrarBtn
+            // 
+            this.cadastrarBtn.Location = new System.Drawing.Point(517, 358);
+            this.cadastrarBtn.Name = "cadastrarBtn";
+            this.cadastrarBtn.Size = new System.Drawing.Size(75, 23);
+            this.cadastrarBtn.TabIndex = 14;
+            this.cadastrarBtn.Text = "Cadastrar";
+            this.cadastrarBtn.UseVisualStyleBackColor = true;
+            this.cadastrarBtn.Click += new System.EventHandler(this.cadastrarBtn_Click);
+            // 
             // Cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cadastrarBtn);
             this.Controls.Add(this.carregarImagemBtn);
             this.Controls.Add(this.fotoClientePb);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.saldoTxt);
+            this.Controls.Add(this.enderecoTxt);
+            this.Controls.Add(this.nomeTxt);
+            this.Controls.Add(this.senhaTxt);
+            this.Controls.Add(this.usuarioTxt);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -212,13 +225,14 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox usuarioTxt;
+        private System.Windows.Forms.TextBox senhaTxt;
+        private System.Windows.Forms.TextBox nomeTxt;
+        private System.Windows.Forms.TextBox enderecoTxt;
+        private System.Windows.Forms.TextBox saldoTxt;
         private System.Windows.Forms.PictureBox fotoClientePb;
         private System.Windows.Forms.OpenFileDialog carregarImagemCliente;
         private System.Windows.Forms.Button carregarImagemBtn;
+        private System.Windows.Forms.Button cadastrarBtn;
     }
 }

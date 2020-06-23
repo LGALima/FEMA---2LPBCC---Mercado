@@ -46,23 +46,77 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CAMADAS\BLL\CategoriaBLL.cs" />
+    <Compile Include="CAMADAS\BLL\ClienteBLL.cs" />
+    <Compile Include="CAMADAS\BLL\CompraBLL.cs" />
+    <Compile Include="CAMADAS\BLL\FuncionarioBLL.cs" />
+    <Compile Include="CAMADAS\BLL\NotaFiscalBLL.cs" />
+    <Compile Include="CAMADAS\BLL\ProdutoBLL.cs" />
+    <Compile Include="CAMADAS\DAL\CategoriaDAL.cs" />
+    <Compile Include="CAMADAS\DAL\ClienteDAL.cs" />
+    <Compile Include="CAMADAS\DAL\CompraDAL.cs" />
     <Compile Include="CAMADAS\DAL\Conexao.cs" />
+    <Compile Include="CAMADAS\DAL\FuncionarioDAL.cs" />
+    <Compile Include="CAMADAS\DAL\NotaFiscalDAL.cs" />
+    <Compile Include="CAMADAS\DAL\ProdutoDAL.cs" />
     <Compile Include="CAMADAS\MODEL\Categoria.cs" />
     <Compile Include="CAMADAS\MODEL\Funcionario.cs" />
     <Compile Include="CAMADAS\MODEL\NotaFiscal.cs" />
     <Compile Include="CAMADAS\MODEL\Compra.cs" />
     <Compile Include="CAMADAS\MODEL\Produto.cs" />
     <Compile Include="CAMADAS\MODEL\Cliente.cs" />
+    <Compile Include="View\Categoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Categoria.Designer.cs">
+      <DependentUpon>Categoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Cliente.Designer.cs">
+      <DependentUpon>Cliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Compra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Compra.Designer.cs">
+      <DependentUpon>Compra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Funcionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Funcionario.designer.cs">
+      <DependentUpon>Funcionario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Produto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Produto.Designer.cs">
+      <DependentUpon>Produto.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\Cliente.resx">
+      <DependentUpon>Cliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Funcionario.resx">
+      <DependentUpon>Funcionario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -86,8 +140,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="CAMADAS\BLL\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

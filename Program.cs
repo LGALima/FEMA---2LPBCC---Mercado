@@ -16,7 +16,7 @@ namespace Mercado_Thay_and_Lusca
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Funcionario());
         }
     }
 }

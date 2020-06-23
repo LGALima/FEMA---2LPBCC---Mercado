@@ -26,5 +26,29 @@ namespace Mercado_Thay_and_Lusca
                 imagemFuncionarioBtn.Text = imagemFuncionario.SafeFileName;
             }
         }
+        private void limpaCampos()
+        {
+            txtUser.Text = "";
+            txtSenha.Text = "";
+            txtNome.Text = "";
+            rdbAdmS.Checked = false;
+            rdbAdmN.Checked = true;
+            imagemFuncionarioPb.Image = null;
+            imagemFuncionarioBtn.Text = "Selecione";
+            imagemFuncionario = new OpenFileDialog();
+        }
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            CAMADAS.MODEL.Funcionario funcionario = new CAMADAS.MODEL.Funcionario();
+            funcionario.usuario = txtUser.Text;
+            funcionario.senha = txtSenha.Text;
+            funcionario.nome = txtNome.Text;
+            if (rdbAdmN.Checked)
+                funcionario.isAdm = "N";
+            else
+                funcionario.isAdm = "S";
+            funcionario.imagem = imagemFuncionario.SafeFileName;
+            limpaCampos();
+        }
     }
 }
