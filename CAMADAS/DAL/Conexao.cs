@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mercado_Thay_and_Lusca.CAMADAS.DAL
 {
-    class Conexao
+    public class Conexao
     {
         public static string getConexao()
         {
