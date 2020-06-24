@@ -313,14 +313,14 @@
             // 
             // txtPesquisar
             // 
-            this.txtPesquisar.Location = new System.Drawing.Point(195, 277);
+            this.txtPesquisar.Location = new System.Drawing.Point(196, 278);
             this.txtPesquisar.Name = "txtPesquisar";
             this.txtPesquisar.Size = new System.Drawing.Size(275, 20);
             this.txtPesquisar.TabIndex = 26;
             // 
             // pesquisarBtn
             // 
-            this.pesquisarBtn.Location = new System.Drawing.Point(472, 274);
+            this.pesquisarBtn.Location = new System.Drawing.Point(471, 276);
             this.pesquisarBtn.Name = "pesquisarBtn";
             this.pesquisarBtn.Size = new System.Drawing.Size(75, 23);
             this.pesquisarBtn.TabIndex = 27;

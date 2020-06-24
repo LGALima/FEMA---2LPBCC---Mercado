@@ -70,8 +70,18 @@ namespace Mercado_Thay_and_Lusca
         private void recarregarTabela()
         {
             CAMADAS.BLL.ClienteBLL cliBLL = new CAMADAS.BLL.ClienteBLL();
-            dgvClientes.DataSource = "";
-            dgvClientes.DataSource = cliBLL.SelectAll();
+            if (rbId.Checked)
+            {
+                dgvClientes.DataSource = cliBLL.SelectById(Convert.ToInt32(txtPesquisar.Text));
+            }
+            else if (rbNome.Checked)
+            {
+                dgvClientes.DataSource = cliBLL.SelectByUsuario(txtPesquisar.Text);
+            }
+            else if (rbTodos.Checked)
+            {
+                dgvClientes.DataSource = cliBLL.SelectAll();
+            }
         }
 
         private void fotoClientePb_Click(object sender, EventArgs e)
@@ -131,7 +141,6 @@ namespace Mercado_Thay_and_Lusca
             txtSenha.Enabled = true;
             txtUsuario.Enabled = true;
             btnCarregarImagem.Enabled = true;
-            dgvClientes.Enabled = false;
             lblId.Text = "-1";
         }
         private void btnEditar_Click(object sender, EventArgs e)
@@ -201,6 +210,7 @@ namespace Mercado_Thay_and_Lusca
         {
             lblTitulo.Text = "Gerenciar Cliente";
             limparCampos();
+            recarregarTabela();
             desabilitarCamposInfo();
             desabilitarBotoes(true);
         }
@@ -218,16 +228,7 @@ namespace Mercado_Thay_and_Lusca
                 MessageBox.Show("Informe a pesquisa!");
             } else
             {
-                if(rbId.Checked)
-                {
-                    dgvClientes.DataSource = cliBLL.SelectById(Convert.ToInt32(txtPesquisar.Text));
-                } else if(rbNome.Checked)
-                {
-                    dgvClientes.DataSource = cliBLL.SelectByUsuario(txtPesquisar.Text);
-                } else
-                {
-                    dgvClientes.DataSource = cliBLL.SelectAll();
-                }
+                recarregarTabela();
             }
         }
     }
