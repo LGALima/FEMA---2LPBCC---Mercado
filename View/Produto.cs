@@ -72,5 +72,10 @@ namespace Mercado_Thay_and_Lusca.View
             cbCategoria.ValueMember = "id";
             cbCategoria.DataSource = catBll.SelectAll();
         }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
     }
 }
