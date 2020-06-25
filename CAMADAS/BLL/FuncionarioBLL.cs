@@ -18,12 +18,16 @@ namespace Mercado_Thay_and_Lusca.CAMADAS.BLL
 
         public List<MODEL.Funcionario> SelectByID(int id)
         {
+            if (id.Equals(""))
+                MessageBox.Show("ID não pode ser nulo!");
             DAL.FuncionarioDAL dalFunc = new DAL.FuncionarioDAL();
             return dalFunc.SelectByID(id);
         }
 
         public List<MODEL.Funcionario> SelectByNome(string nome)
         {
+            if(nome.Equals(""))
+                MessageBox.Show("Nome não pode ser nulo!");
             DAL.FuncionarioDAL dalFunc = new DAL.FuncionarioDAL();
             return dalFunc.SelectByNome(nome);
         }
@@ -31,6 +35,7 @@ namespace Mercado_Thay_and_Lusca.CAMADAS.BLL
         public void Insert(MODEL.Funcionario funcionario, Image imagem)
         {
             string erro = "";
+            string title = "Erros detectados";
             if (funcionario.usuario.Equals(""))
                 erro += "\tUsuário não pode ser nulo\n";
             if (funcionario.senha.Equals(""))
@@ -38,10 +43,7 @@ namespace Mercado_Thay_and_Lusca.CAMADAS.BLL
             if (funcionario.nome.Equals(""))
                 erro += "\tNome não pode ser nulo\n";
             if (!erro.Equals(""))
-            {
-                string title = "Erros detectados";
                 MessageBox.Show(erro, title, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
             else
             {
                 DAL.FuncionarioDAL dalFunc = new DAL.FuncionarioDAL();
@@ -52,13 +54,26 @@ namespace Mercado_Thay_and_Lusca.CAMADAS.BLL
 
         public void Update(MODEL.Funcionario funcionario)
         {
-            DAL.FuncionarioDAL dalFunc = new DAL.FuncionarioDAL();
-            dalFunc.Update(funcionario);
+            string erro = "";
+            string title = "Erros detectados";
+            if(funcionario.senha.Equals(""))
+                erro += "ID não pode ser nulo!\n";
+            if (funcionario.nome.Equals(""))
+                erro += "Nome não pode ser nulo!\n";
+            if (!erro.Equals(""))
+                MessageBox.Show(erro, title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+                DAL.FuncionarioDAL dalFunc = new DAL.FuncionarioDAL();
+                dalFunc.Update(funcionario);
+            }
         }
-        public void Delete(int idFuncionario)
+        public void Delete(int id)
         {
+            if(id.Equals(""))
+                MessageBox.Show("ID não pode ser nulo!");
             DAL.FuncionarioDAL dalFunc = new DAL.FuncionarioDAL();
-            dalFunc.Delete(idFuncionario);
+            dalFunc.Delete(id);
         }
 
     }

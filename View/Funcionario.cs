@@ -20,6 +20,7 @@ namespace Mercado_Thay_and_Lusca
             dtgFuncionario.DataSource = "";
             dtgFuncionario.DataSource =  bllFunc.Select();
             txtPesquisar.Enabled = false;
+            btnPesquisar.Enabled = false;
             limpaCampos();
             habilitaControles(false);
             habilitaButtons(true);
@@ -148,7 +149,6 @@ namespace Mercado_Thay_and_Lusca
                 if (resposta == DialogResult.Yes)
                 {
                     CAMADAS.MODEL.Funcionario funcionario = new CAMADAS.MODEL.Funcionario();
-                    funcionario.id = Convert.ToInt32(lblID.Text);
                     funcionario.usuario = txtUser.Text;
                     funcionario.senha = txtSenha.Text;
                     funcionario.nome = txtNome.Text;
@@ -168,12 +168,15 @@ namespace Mercado_Thay_and_Lusca
                            MessageBox.Show("Escolha uma imagem!");
                     }
                     else if (lblControl.Text.Equals("2"))
+                    {
+                        funcionario.id = Convert.ToInt32(lblID.Text);
                         bllFunc.Update(funcionario);
+                    }
                 }
             }
             limpaCampos();
-            habilitaButtons(true);
-            habilitaControles(false);
+            dtgFuncionario.DataSource = "";
+            dtgFuncionario.DataSource = bllFunc.Select();
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
@@ -195,6 +198,8 @@ namespace Mercado_Thay_and_Lusca
 
         private void rdbID_CheckedChanged(object sender, EventArgs e)
         {
+            txtPesquisar.Text = "";
+            btnPesquisar.Enabled = true;
             dtgFuncionario.DataSource = "";
             txtPesquisar.Enabled = true;
             txtPesquisar.Focus();
@@ -203,6 +208,8 @@ namespace Mercado_Thay_and_Lusca
 
         private void rdbNome_CheckedChanged(object sender, EventArgs e)
         {
+            txtPesquisar.Text = "";
+            btnPesquisar.Enabled = true;
             dtgFuncionario.DataSource = "";
             txtPesquisar.Enabled = true;
             txtPesquisar.Focus();
@@ -211,6 +218,7 @@ namespace Mercado_Thay_and_Lusca
 
         private void rdbTodos_CheckedChanged(object sender, EventArgs e)
         {
+            txtPesquisar.Text = "";
             dtgFuncionario.DataSource = "";
             txtPesquisar.Enabled = false;
             lblInsira.Text = "";

@@ -130,7 +130,6 @@ namespace Mercado_Thay_and_Lusca.CAMADAS.DAL
                 conexao.Open();
                 cmd.ExecuteNonQuery();
                 imagem.Save(Conexao.getPathImagens() + @"Funcionarios\" + funcionario.imagem);
-                MessageBox.Show(Conexao.getPathImagens() + @"Funcionarios\" + funcionario.imagem);
             }
             catch
             {
@@ -165,12 +164,12 @@ namespace Mercado_Thay_and_Lusca.CAMADAS.DAL
                 conexao.Close();
             }
         }
-        public void Delete(int idFuncionario)
+        public void Delete(int id)
         {
             SqlConnection conexao = new SqlConnection(strCon);
             string sql = "DELETE FROM Funcionario  WHERE id=@id;";
             SqlCommand cmd = new SqlCommand(sql, conexao);
-            cmd.Parameters.AddWithValue("@id", idFuncionario);
+            cmd.Parameters.AddWithValue("@id", id);
             try
             {
                 conexao.Open();
