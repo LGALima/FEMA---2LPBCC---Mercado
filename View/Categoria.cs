@@ -37,7 +37,7 @@ namespace Mercado_Thay_and_Lusca.View
                 dgvCategoria.DataSource = catBll.SelectById(Convert.ToInt32(txtPesquisar.Text));
             } else if(rbDescricao.Checked)
             {
-                dgvCategoria.DataSource = catBll.SelectByDescricao(txtPesquisar.Text);
+                dgvCategoria.DataSource = catBll.SelectByCategoria(txtPesquisar.Text);
             }
         }
 
@@ -91,7 +91,7 @@ namespace Mercado_Thay_and_Lusca.View
         {
             CAMADAS.MODEL.Categoria categoria = new CAMADAS.MODEL.Categoria();
             categoria.id = Convert.ToInt32(lblId.Text);
-            categoria.descricao = txtDescricao.Text;
+            categoria.categoria = txtDescricao.Text;
             CAMADAS.BLL.CategoriaBLL catBll = new CAMADAS.BLL.CategoriaBLL();
             if (this.acao.Equals("cadastrar"))
             {
@@ -118,7 +118,7 @@ namespace Mercado_Thay_and_Lusca.View
         private void dgvCategoria_DoubleClick(object sender, EventArgs e)
         {
             lblId.Text = dgvCategoria.SelectedRows[0].Cells["id"].Value.ToString();
-            txtDescricao.Text = dgvCategoria.SelectedRows[0].Cells["descricao"].Value.ToString();
+            txtDescricao.Text = dgvCategoria.SelectedRows[0].Cells["categoria"].Value.ToString();
         }
 
         private void Pesquisar_Click(object sender, EventArgs e)

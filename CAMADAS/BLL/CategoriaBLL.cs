@@ -20,10 +20,10 @@ namespace Mercado_Thay_and_Lusca.CAMADAS.BLL
             DAL.CategoriaDAL catDal = new DAL.CategoriaDAL();
             return catDal.SelectById(id);
         }
-        public List<MODEL.Categoria> SelectByDescricao(string descricao)
+        public List<MODEL.Categoria> SelectByCategoria(string descricao)
         {
             DAL.CategoriaDAL catDal = new DAL.CategoriaDAL();
-            return catDal.SelectByDescricao(descricao);
+            return catDal.SelectByCategoria(descricao);
         }
 
         public void Insert(MODEL.Categoria categoria)

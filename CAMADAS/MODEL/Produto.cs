@@ -11,11 +11,9 @@ namespace Mercado_Thay_and_Lusca.CAMADAS.MODEL
     {
         public int id { get; set; }
 
-        public string nome { get; set; }
+        public string produto { get; set; }
 
         public Categoria categoria { get; set; }
-
-        public string descricao { get; set; }
 
         public int quantidadeEstoque { get; set; }
 

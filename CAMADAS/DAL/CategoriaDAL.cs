@@ -28,7 +28,7 @@ namespace Mercado_Thay_and_Lusca.CAMADAS.DAL
                 {
                     MODEL.Categoria categoria = new MODEL.Categoria();
                     categoria.id = Convert.ToInt32(dados["id"].ToString());
-                    categoria.descricao = dados["descricao"].ToString();
+                    categoria.categoria = dados["categoria"].ToString();
                     lstCategorias.Add(categoria);
                 }
             } catch
@@ -44,9 +44,9 @@ namespace Mercado_Thay_and_Lusca.CAMADAS.DAL
         public void Insert(MODEL.Categoria categoria)
         {
             SqlConnection conexao = new SqlConnection(strCon);
-            string sql = "INSERT INTO Categoria (descricao) VALUES (@descricao)";
+            string sql = "INSERT INTO Categoria (categoria) VALUES (@categoria)";
             SqlCommand cmd = new SqlCommand(sql, conexao);
-            cmd.Parameters.AddWithValue("@descricao", categoria.descricao);
+            cmd.Parameters.AddWithValue("@categoria", categoria.categoria);
             try
             {
                 conexao.Open();
@@ -63,10 +63,10 @@ namespace Mercado_Thay_and_Lusca.CAMADAS.DAL
         public void Update(MODEL.Categoria categoria)
         {
             SqlConnection conexao = new SqlConnection(strCon);
-            string sql = "UPDATE Categoria SET descricao=@descricao WHERE id=@id";
+            string sql = "UPDATE Categoria SET categoria=@categoria WHERE id=@id";
             SqlCommand cmd = new SqlCommand(sql, conexao);
             cmd.Parameters.AddWithValue("@id", categoria.id);
-            cmd.Parameters.AddWithValue("@descricao", categoria.descricao);
+            cmd.Parameters.AddWithValue("@categoria", categoria.categoria);
             try
             {
                 conexao.Open();
@@ -118,7 +118,7 @@ namespace Mercado_Thay_and_Lusca.CAMADAS.DAL
                 {
                     MODEL.Categoria categoria = new MODEL.Categoria();
                     categoria.id = Convert.ToInt32(dados["id"].ToString());
-                    categoria.descricao = dados["descricao"].ToString();
+                    categoria.categoria = dados["categoria"].ToString();
                     lstCategorias.Add(categoria);
                 }
             }
@@ -133,13 +133,13 @@ namespace Mercado_Thay_and_Lusca.CAMADAS.DAL
             return lstCategorias;
         }
 
-        public List<MODEL.Categoria> SelectByDescricao(string descricao)
+        public List<MODEL.Categoria> SelectByCategoria(string categoria)
         {
             List<MODEL.Categoria> lstCategorias = new List<MODEL.Categoria>();
             SqlConnection conexao = new SqlConnection(strCon);
-            string sql = "SELECT * FROM Categoria WHERE descricao LIKE @descricao";
+            string sql = "SELECT * FROM Categoria WHERE categoria LIKE @categoria";
             SqlCommand cmd = new SqlCommand(sql, conexao);
-            cmd.Parameters.AddWithValue("@descricao", "%" + descricao + "%");
+            cmd.Parameters.AddWithValue("@categoria", "%" + categoria + "%");
 
             try
             {
@@ -147,10 +147,10 @@ namespace Mercado_Thay_and_Lusca.CAMADAS.DAL
                 SqlDataReader dados = cmd.ExecuteReader(CommandBehavior.CloseConnection);
                 while (dados.Read())
                 {
-                    MODEL.Categoria categoria = new MODEL.Categoria();
-                    categoria.id = Convert.ToInt32(dados["id"].ToString());
-                    categoria.descricao = dados["descricao"].ToString();
-                    lstCategorias.Add(categoria);
+                    MODEL.Categoria categoriaModel = new MODEL.Categoria();
+                    categoriaModel.id = Convert.ToInt32(dados["id"].ToString());
+                    categoriaModel.categoria = dados["categoria"].ToString();
+                    lstCategorias.Add(categoriaModel);
                 }
             }
             catch

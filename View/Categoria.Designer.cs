@@ -131,10 +131,10 @@
             this.rbDescricao.AutoSize = true;
             this.rbDescricao.Location = new System.Drawing.Point(175, 275);
             this.rbDescricao.Name = "rbDescricao";
-            this.rbDescricao.Size = new System.Drawing.Size(73, 17);
+            this.rbDescricao.Size = new System.Drawing.Size(70, 17);
             this.rbDescricao.TabIndex = 8;
             this.rbDescricao.TabStop = true;
-            this.rbDescricao.Text = "Descricao";
+            this.rbDescricao.Text = "Categoria";
             this.rbDescricao.UseVisualStyleBackColor = true;
             // 
             // Pesquisar
