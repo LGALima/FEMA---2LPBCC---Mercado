@@ -55,7 +55,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cbCategoria = new System.Windows.Forms.ComboBox();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.carregarImagemProduto = new System.Windows.Forms.OpenFileDialog();
+            this.btnMinus = new System.Windows.Forms.Button();
+            this.btnPlus = new System.Windows.Forms.Button();
+            this.rbIdCategoria = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFotoProduto)).BeginInit();
             this.SuspendLayout();
@@ -83,9 +86,9 @@
             // 
             // txtPesquisar
             // 
-            this.txtPesquisar.Location = new System.Drawing.Point(218, 274);
+            this.txtPesquisar.Location = new System.Drawing.Point(303, 274);
             this.txtPesquisar.Name = "txtPesquisar";
-            this.txtPesquisar.Size = new System.Drawing.Size(266, 20);
+            this.txtPesquisar.Size = new System.Drawing.Size(181, 20);
             this.txtPesquisar.TabIndex = 54;
             // 
             // rbProduto
@@ -144,6 +147,7 @@
             this.dgvProdutos.Name = "dgvProdutos";
             this.dgvProdutos.Size = new System.Drawing.Size(510, 150);
             this.dgvProdutos.TabIndex = 48;
+            this.dgvProdutos.DoubleClick += new System.EventHandler(this.dgvProdutos_DoubleClick);
             // 
             // btnCancelar
             // 
@@ -208,6 +212,7 @@
             this.btnCarregarImagem.TabIndex = 42;
             this.btnCarregarImagem.Text = "Selecione";
             this.btnCarregarImagem.UseVisualStyleBackColor = true;
+            this.btnCarregarImagem.Click += new System.EventHandler(this.btnCarregarImagem_Click);
             // 
             // pbFotoProduto
             // 
@@ -229,9 +234,9 @@
             // 
             // txtEstoque
             // 
-            this.txtEstoque.Location = new System.Drawing.Point(151, 164);
+            this.txtEstoque.Location = new System.Drawing.Point(177, 164);
             this.txtEstoque.Name = "txtEstoque";
-            this.txtEstoque.Size = new System.Drawing.Size(89, 20);
+            this.txtEstoque.Size = new System.Drawing.Size(37, 20);
             this.txtEstoque.TabIndex = 38;
             // 
             // txtProduto
@@ -309,16 +314,52 @@
             this.cbCategoria.Size = new System.Drawing.Size(288, 21);
             this.cbCategoria.TabIndex = 57;
             // 
-            // openFileDialog1
+            // carregarImagemProduto
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            this.carregarImagemProduto.FileName = "openFileDialog1";
+            this.carregarImagemProduto.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            // 
+            // btnMinus
+            // 
+            this.btnMinus.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMinus.BackgroundImage")));
+            this.btnMinus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMinus.Location = new System.Drawing.Point(148, 161);
+            this.btnMinus.Name = "btnMinus";
+            this.btnMinus.Size = new System.Drawing.Size(25, 25);
+            this.btnMinus.TabIndex = 58;
+            this.btnMinus.UseVisualStyleBackColor = true;
+            this.btnMinus.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnPlus
+            // 
+            this.btnPlus.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPlus.BackgroundImage")));
+            this.btnPlus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPlus.Location = new System.Drawing.Point(219, 161);
+            this.btnPlus.Name = "btnPlus";
+            this.btnPlus.Size = new System.Drawing.Size(25, 25);
+            this.btnPlus.TabIndex = 59;
+            this.btnPlus.UseVisualStyleBackColor = true;
+            this.btnPlus.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // rbIdCategoria
+            // 
+            this.rbIdCategoria.AutoSize = true;
+            this.rbIdCategoria.Location = new System.Drawing.Point(218, 276);
+            this.rbIdCategoria.Name = "rbIdCategoria";
+            this.rbIdCategoria.Size = new System.Drawing.Size(84, 17);
+            this.rbIdCategoria.TabIndex = 60;
+            this.rbIdCategoria.TabStop = true;
+            this.rbIdCategoria.Text = "ID Categoria";
+            this.rbIdCategoria.UseVisualStyleBackColor = true;
             // 
             // Produto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.rbIdCategoria);
+            this.Controls.Add(this.btnPlus);
+            this.Controls.Add(this.btnMinus);
             this.Controls.Add(this.cbCategoria);
             this.Controls.Add(this.rbTodos);
             this.Controls.Add(this.pesquisarBtn);
@@ -383,6 +424,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbCategoria;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.OpenFileDialog carregarImagemProduto;
+        private System.Windows.Forms.Button btnMinus;
+        private System.Windows.Forms.Button btnPlus;
+        private System.Windows.Forms.RadioButton rbIdCategoria;
     }
 }
