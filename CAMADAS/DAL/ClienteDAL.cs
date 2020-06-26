@@ -125,14 +125,13 @@ namespace Mercado_Thay_and_Lusca.CAMADAS.DAL
         }
 
 
-        public List<MODEL.Cliente> SelectByUsuario(string usuario)
+        public List<MODEL.Cliente> SelectByNome(string nome)
         {
             SqlConnection conexao = new SqlConnection(strCon);
-            string sql = "SELECT * FROM Cliente WHERE usuario LIKE @usuario";
+            string sql = "SELECT * FROM Cliente WHERE nome LIKE @nome";
             SqlCommand cmd = new SqlCommand(sql, conexao);
-            cmd.Parameters.AddWithValue("@usuario", "%" + usuario+ "%");
+            cmd.Parameters.AddWithValue("@nome", "%" + nome + "%");
             List<MODEL.Cliente> lstClientes = new List<MODEL.Cliente>();
-
             try
             {
                 conexao.Open();

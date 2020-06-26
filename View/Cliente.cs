@@ -16,23 +16,17 @@ namespace Mercado_Thay_and_Lusca
         public Cliente()
         {
             InitializeComponent();
-            recarregarTabela();
+            txtPesquisar.Enabled = false;
+            pesquisarBtn.Enabled = false;
             limparCampos();
             desabilitarBotoes(true);
             rbTodos.Checked = true;
+            desabilitarCamposInfo();
+            CAMADAS.BLL.ClienteBLL cliBLL = new CAMADAS.BLL.ClienteBLL();
+            dgvClientes.DataSource = cliBLL.SelectAll();
         }
 
         private string acao = "nada";
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
-        {
-
-        }
 
         private void carregarImagemBtn_Click(object sender, EventArgs e)
         {
@@ -70,33 +64,12 @@ namespace Mercado_Thay_and_Lusca
         private void recarregarTabela()
         {
             CAMADAS.BLL.ClienteBLL cliBLL = new CAMADAS.BLL.ClienteBLL();
-            if (rbId.Checked)
-            {
-                dgvClientes.DataSource = cliBLL.SelectById(Convert.ToInt32(txtPesquisar.Text));
-            }
-            else if (rbNome.Checked)
-            {
-                dgvClientes.DataSource = cliBLL.SelectByUsuario(txtPesquisar.Text);
-            }
-            else if (rbTodos.Checked)
-            {
+            if (rbTodos.Checked)
                 dgvClientes.DataSource = cliBLL.SelectAll();
-            }
-        }
-
-        private void fotoClientePb_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Cliente_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void clientesDgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            else if (rbId.Checked)
+                dgvClientes.DataSource = cliBLL.SelectById(Convert.ToInt32(txtPesquisar.Text));
+            else if (rbNome.Checked)
+                dgvClientes.DataSource = cliBLL.SelectByNome(txtPesquisar.Text);
         }
 
         private void dgvClientes_DoubleClick(object sender, EventArgs e)
@@ -121,7 +94,6 @@ namespace Mercado_Thay_and_Lusca
 
             btnCancelar.Enabled = !status;
             btnSalvar.Enabled = !status;
-            dgvClientes.Enabled = !status;
         }
         private void btnDeletar_Click(object sender, EventArgs e)
         {
@@ -142,10 +114,11 @@ namespace Mercado_Thay_and_Lusca
             txtUsuario.Enabled = true;
             btnCarregarImagem.Enabled = true;
             lblId.Text = "-1";
+            txtUsuario.Focus();
         }
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            lblTitulo.Text = "Editar de Cliente";
+            lblTitulo.Text = "Editor de Cliente";
             txtEndereco.Enabled = true;
             txtNome.Enabled = true;
             txtSaldo.Enabled = true;
@@ -215,21 +188,46 @@ namespace Mercado_Thay_and_Lusca
             desabilitarBotoes(true);
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void pesquisarBtn_Click(object sender, EventArgs e)
         {
-            CAMADAS.BLL.ClienteBLL cliBLL = new CAMADAS.BLL.ClienteBLL();
-            if(txtPesquisar.Text.Equals(""))
-            {
+            if (txtPesquisar.Text.Equals(""))
                 MessageBox.Show("Informe a pesquisa!");
-            } else
-            {
+            else
                 recarregarTabela();
-            }
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void rbTodos_CheckedChanged(object sender, EventArgs e)
+        {
+            CAMADAS.BLL.ClienteBLL bllCli = new CAMADAS.BLL.ClienteBLL();
+            lblInserir.Text = "";
+            txtPesquisar.Text = "";
+            txtPesquisar.Enabled = false;
+            pesquisarBtn.Enabled = false;
+            dgvClientes.DataSource = "";
+            dgvClientes.DataSource = bllCli.SelectAll();
+        }
+
+        private void rbId_CheckedChanged(object sender, EventArgs e)
+        {
+            lblInserir.Text = "Insira o ID:";
+            txtPesquisar.Enabled = true;
+            txtPesquisar.Text = "";
+            pesquisarBtn.Enabled = true;
+            dgvClientes.DataSource = "";
+        }
+
+        private void rbNome_CheckedChanged(object sender, EventArgs e)
+        {
+            lblInserir.Text = "Insira o Nome:";
+            txtPesquisar.Enabled = true;
+            txtPesquisar.Text = "";
+            pesquisarBtn.Enabled = true;
+            dgvClientes.DataSource = "";
         }
     }
 }

@@ -16,44 +16,35 @@ namespace Mercado_Thay_and_Lusca.View
         public Produto()
         {
             InitializeComponent();
-        }
-        private string acao = "";
-        private void Produto_Load(object sender, EventArgs e)
-        {
-            desabilitarBotoes(true);
-            limparCampos();
-            desabilitarCampos();
+            rbTodos.Checked = true;
+            CAMADAS.BLL.ProdutoBLL bllProd = new CAMADAS.BLL.ProdutoBLL();
             CAMADAS.BLL.CategoriaBLL catBll = new CAMADAS.BLL.CategoriaBLL();
+            dgvProdutos.DataSource = "";
+            dgvProdutos.DataSource = bllProd.SelectAll();
             cbCategoria.DisplayMember = "categoria";
             cbCategoria.ValueMember = "id";
             cbCategoria.DataSource = catBll.SelectAll();
-            rbTodos.Checked = true;
-            recarregarTabela();
+            txtPesquisar.Enabled = false;
+            pesquisarBtn.Enabled = false;
+            limparCampos();
+            desabilitarBotoes(true);
+            desabilitarCampos();
+            cbCategoria.SelectedItem = null;
         }
 
+        private string acao = "";
+       
         private void recarregarTabela()
         {
             CAMADAS.BLL.ProdutoBLL bllProd = new CAMADAS.BLL.ProdutoBLL();
-
-            if (rbId.Checked)
-            {
-                if (!txtPesquisar.Equals(""))
-                    dgvProdutos.DataSource = bllProd.SelectById(Convert.ToInt32(txtPesquisar.Text));
-            }
-            else if (rbProduto.Checked)
-            {
-                if (!txtPesquisar.Equals(""))
-                    dgvProdutos.DataSource = bllProd.SelectByProduto(txtPesquisar.Text);
-            }
-            else if (rbIdCategoria.Checked)
-            {
-                if (!txtPesquisar.Equals(""))
-                    dgvProdutos.DataSource = bllProd.SelectByIdCategoria(Convert.ToInt32(txtPesquisar.Text));
-            }
-            else if (rbTodos.Checked)
-            {
+            if (rbTodos.Checked)
                 dgvProdutos.DataSource = bllProd.SelectAll();
-            }
+            else if (rbId.Checked)
+                dgvProdutos.DataSource = bllProd.SelectById(Convert.ToInt32(txtPesquisar.Text));
+            else if (rbProduto.Checked)
+                    dgvProdutos.DataSource = bllProd.SelectByProduto(txtPesquisar.Text);
+            else if (rbIdCategoria.Checked)
+                    dgvProdutos.DataSource = bllProd.SelectByIdCategoria(Convert.ToInt32(txtPesquisar.Text));
         }
         private void limparCampos()
         {
@@ -88,8 +79,11 @@ namespace Mercado_Thay_and_Lusca.View
         }
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
+            btnMinus.Enabled = true;
+            btnPlus.Enabled = true;
             lblTitulo.Text = "Cadastro de Produto";
             this.acao = "cadastrar";
+            txtProduto.Focus();
             txtEstoque.Enabled = true;
             txtPreco.Enabled = true;
             txtProduto.Enabled = true;
@@ -166,29 +160,10 @@ namespace Mercado_Thay_and_Lusca.View
 
         private void pesquisarBtn_Click(object sender, EventArgs e)
         {
-            recarregarTabela();
-        }
-
-
-        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (Convert.ToInt32(txtEstoque.Text) > 0)
-            {
-                txtEstoque.Text = (Convert.ToInt32(txtEstoque.Text) - 1).ToString();
-            }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if(Convert.ToInt32(txtEstoque.Text) < 9999)
-            {
-                txtEstoque.Text = (Convert.ToInt32(txtEstoque.Text) + 1).ToString();
-            }
+            if (txtPesquisar.Text.Equals(""))
+                MessageBox.Show("Informe a pesquisa!");
+            else
+                recarregarTabela();
         }
 
         private void btnCarregarImagem_Click(object sender, EventArgs e)
@@ -212,6 +187,69 @@ namespace Mercado_Thay_and_Lusca.View
             btnCarregarImagem.Text = dgvProdutos.SelectedRows[0].Cells["imagem"].Value.ToString();
             Bitmap imagem = new Bitmap(Conexao.getPathImagens() + @"Produtos/" + dgvProdutos.SelectedRows[0].Cells["imagem"].Value.ToString());
             pbFotoProduto.Image = imagem;
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void rbId_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPesquisar.Text = "";
+            pesquisarBtn.Enabled = true;
+            dgvProdutos.DataSource = "";
+            txtPesquisar.Enabled = true;
+            txtPesquisar.Focus();
+            lblInsira.Text = "Insira o ID:";
+        }
+
+        private void Menos_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(txtEstoque.Text) > 0)
+            {
+                txtEstoque.Text = (Convert.ToInt32(txtEstoque.Text) - 1).ToString();
+            }
+        }
+
+        private void Mais_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(txtEstoque.Text) < 9999)
+            {
+                txtEstoque.Text = (Convert.ToInt32(txtEstoque.Text) + 1).ToString();
+            }
+        }
+
+        private void rbProduto_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPesquisar.Text = "";
+            pesquisarBtn.Enabled = true;
+            dgvProdutos.DataSource = "";
+            txtPesquisar.Enabled = true;
+            txtPesquisar.Focus();
+            lblInsira.Text = "Insira o Produto:";
+        }
+
+        private void rbIdCategoria_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPesquisar.Text = "";
+            pesquisarBtn.Enabled = true;
+            dgvProdutos.DataSource = "";
+            txtPesquisar.Enabled = true;
+            txtPesquisar.Focus();
+            lblInsira.Text = "Insira o ID-Categoria:";
+        }
+
+        private void rbTodos_CheckedChanged(object sender, EventArgs e)
+        {
+            CAMADAS.BLL.ProdutoBLL bllProd = new CAMADAS.BLL.ProdutoBLL();
+            dgvProdutos.DataSource = "";
+            dgvProdutos.DataSource = bllProd.SelectAll();
+            txtPesquisar.Text = "";
+            pesquisarBtn.Enabled = false;
+            txtPesquisar.Enabled = false;
+            txtPesquisar.Focus();
+            lblInsira.Text = "";
         }
     }
 }

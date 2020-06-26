@@ -15,15 +15,16 @@ namespace Mercado_Thay_and_Lusca.View
         private string acao = "";
         public Categoria()
         {
-            CAMADAS.BLL.CategoriaBLL categoriaBLL = new CAMADAS.BLL.CategoriaBLL();
             InitializeComponent();
             dgvCategoria.DataSource = "";
-            dgvCategoria.DataSource = categoriaBLL.SelectAll();
             desabilitarBotoes(true);
             rbTodos.Checked = true;
             txtDescricao.Enabled = false;
             recarregarTabela();
             limparCampos();
+            txtPesquisar.Enabled = false;
+            Pesquisar.Enabled = false;
+            lblInsira.Text = "";
         }
 
         private void recarregarTabela()
@@ -41,15 +42,6 @@ namespace Mercado_Thay_and_Lusca.View
             }
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
         private void desabilitarBotoes(bool status)
         {
             btnCadastrar.Enabled = status;
@@ -123,13 +115,39 @@ namespace Mercado_Thay_and_Lusca.View
 
         private void Pesquisar_Click(object sender, EventArgs e)
         {
-            if(txtPesquisar.Equals(""))
-            {
+            if (txtPesquisar.Text.Equals(""))
                 MessageBox.Show("Informe a pesquisa!");
-            } else
-            {
+            else
                 recarregarTabela();
-            }
+        }
+
+        private void rbId_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPesquisar.Enabled = true;
+            Pesquisar.Enabled = true;
+            lblInsira.Text = "Insira o ID:";
+        }
+
+        private void rbDescricao_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPesquisar.Enabled = true;
+            Pesquisar.Enabled = true;
+            lblInsira.Text = "Insira a Categoria:";
+        }
+
+        private void rbTodos_CheckedChanged(object sender, EventArgs e)
+        {
+            CAMADAS.BLL.CategoriaBLL bllCat = new CAMADAS.BLL.CategoriaBLL();
+            txtPesquisar.Enabled = false;
+            Pesquisar.Enabled = false;
+            lblInsira.Text = "";
+            dgvCategoria.DataSource = "";
+            dgvCategoria.DataSource = bllCat.SelectAll();
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

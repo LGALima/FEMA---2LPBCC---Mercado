@@ -65,7 +65,6 @@ namespace Mercado_Thay_and_Lusca
             imagemFuncionarioBtn.Text = "Selecione";
             imagemFuncionario = new OpenFileDialog();
         }
-        
         private void dtgFuncionario_DoubleClick(object sender, EventArgs e)
         {
             lblID.Visible = true;
@@ -82,6 +81,7 @@ namespace Mercado_Thay_and_Lusca
         }
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
+            lblFuncionario.Text = "Cadastrar Funcionário";
             lblID.Visible = false;
             limpaCampos();
             habilitaControles(true);
@@ -92,6 +92,7 @@ namespace Mercado_Thay_and_Lusca
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            lblFuncionario.Text = "Editar funcionário";
             habilitaControles(true);
             habilitaButtons(false);
             txtUser.Enabled = false;
@@ -105,6 +106,7 @@ namespace Mercado_Thay_and_Lusca
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            lblFuncionario.Text = "Deletar Funcionário";
             habilitaControles(true);
             habilitaButtons(false);
             lblControl.Text = "3";
@@ -112,6 +114,7 @@ namespace Mercado_Thay_and_Lusca
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            lblFuncionario.Text = "Gerenciar Funcionários";
             limpaCampos();
             habilitaControles(false);
             habilitaButtons(true);
@@ -119,6 +122,7 @@ namespace Mercado_Thay_and_Lusca
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            lblFuncionario.Text = "Gerenciar Funcionários";
             CAMADAS.BLL.FuncionarioBLL bllFunc = new CAMADAS.BLL.FuncionarioBLL();
             if (lblControl.Text.Equals("3")) // deletar
             {
@@ -175,6 +179,7 @@ namespace Mercado_Thay_and_Lusca
                 }
             }
             limpaCampos();
+            rdbTodos.Checked = true;
             dtgFuncionario.DataSource = "";
             dtgFuncionario.DataSource = bllFunc.Select();
         }
@@ -182,17 +187,20 @@ namespace Mercado_Thay_and_Lusca
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             CAMADAS.BLL.FuncionarioBLL bllFunc = new CAMADAS.BLL.FuncionarioBLL();
-            if(rdbTodos.Checked)
-                dtgFuncionario.DataSource = bllFunc.Select();
-            else if(rdbID.Checked)
+            if (txtPesquisar.Text.Equals(""))
+                MessageBox.Show("Informe a Pesquisa!");
+            else
             {
-                int id = Convert.ToInt32(txtPesquisar.Text);
-                dtgFuncionario.DataSource = bllFunc.SelectByID(id);
-            }
-            else if(rdbNome.Checked)
-            {
-                string nome = txtPesquisar.Text;
-                dtgFuncionario.DataSource = bllFunc.SelectByNome(nome);
+                if (rdbID.Checked)
+                {
+                    int id = Convert.ToInt32(txtPesquisar.Text);
+                    dtgFuncionario.DataSource = bllFunc.SelectByID(id);
+                }
+                else if (rdbNome.Checked)
+                {
+                    string nome = txtPesquisar.Text;
+                    dtgFuncionario.DataSource = bllFunc.SelectByNome(nome);
+                }
             }
         }
 
@@ -218,10 +226,18 @@ namespace Mercado_Thay_and_Lusca
 
         private void rdbTodos_CheckedChanged(object sender, EventArgs e)
         {
+            CAMADAS.BLL.FuncionarioBLL bllFunc = new CAMADAS.BLL.FuncionarioBLL();
+            btnPesquisar.Enabled = false;
             txtPesquisar.Text = "";
             dtgFuncionario.DataSource = "";
+            dtgFuncionario.DataSource = bllFunc.Select();
             txtPesquisar.Enabled = false;
             lblInsira.Text = "";
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 

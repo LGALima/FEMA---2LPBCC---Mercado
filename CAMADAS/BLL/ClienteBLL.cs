@@ -104,10 +104,10 @@ namespace Mercado_Thay_and_Lusca.CAMADAS.BLL
             }
         }
         
-        public List<MODEL.Cliente> SelectByUsuario(string usuario)
+        public List<MODEL.Cliente> SelectByNome(string nome)
         { 
             DAL.ClienteDAL cliDal = new DAL.ClienteDAL();
-            return cliDal.SelectByUsuario(usuario);   
+            return cliDal.SelectByNome(nome);   
         }
 
         public List<MODEL.Cliente> SelectById(int id)
