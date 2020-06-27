@@ -37,8 +37,7 @@ namespace Mercado_Thay_and_Lusca.CAMADAS.BLL
             if (erro.Equals(""))
             {
                 DAL.CompraDAL dalCompra = new DAL.CompraDAL();
-                
-                
+
                 int quantidadeTotal = dalCompra.retornarQuantidadeEmEstoqueProdutoPorId(carrinho.idProduto);
                 if (quantidadeTotal < carrinho.quantidade)
                 {
@@ -48,7 +47,6 @@ namespace Mercado_Thay_and_Lusca.CAMADAS.BLL
                 quantidadeTotal -= carrinho.quantidade;
 
                 double saldoTotal = dalCompra.retornarSaldoClientePorId(carrinho.idCliente);
-                MessageBox.Show("" + saldoTotal);
                 if (saldoTotal < carrinho.total)
                 {
                     MessageBox.Show("O seu saldo não é suficiente para cumprir a transação");
@@ -107,6 +105,32 @@ namespace Mercado_Thay_and_Lusca.CAMADAS.BLL
                 DAL.CompraDAL dalComp = new DAL.CompraDAL();
                 return dalComp.SelectRegistroCompraByIdCliente(idCliente);
             }
+        }
+
+        public List<MODEL.RegistroCompra> SelectRegistroCompraById(int id)
+        {
+            if (id < 1)
+            {
+                MessageBox.Show("Cliente inválido");
+                return null;
+            }
+            else
+            {
+                DAL.CompraDAL dalComp = new DAL.CompraDAL();
+                return dalComp.SelectRegistroCompraById(id);
+            }
+        }
+
+        public List<MODEL.Compra> SelectComprasRealizadasByIdRegistro(int idRegistro)
+        {
+            DAL.CompraDAL dalComp = new DAL.CompraDAL();
+            return dalComp.SelectComprasRealizadasByIdRegistro(idRegistro);
+        }
+
+        public List<MODEL.RegistroCompra> SelectAllRegistroCompra()
+        {
+            DAL.CompraDAL dalComp = new DAL.CompraDAL();
+            return dalComp.SelectAllRegistroCompra();
         }
     }
 }

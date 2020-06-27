@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -59,12 +62,15 @@
     <Compile Include="CAMADAS\DAL\FuncionarioDAL.cs" />
     <Compile Include="CAMADAS\DAL\NotaFiscalDAL.cs" />
     <Compile Include="CAMADAS\DAL\ProdutoDAL.cs" />
+    <Compile Include="CAMADAS\MODEL\Carrinho.cs" />
     <Compile Include="CAMADAS\MODEL\Categoria.cs" />
     <Compile Include="CAMADAS\MODEL\Funcionario.cs" />
-    <Compile Include="CAMADAS\MODEL\NotaFiscal.cs" />
+    <Compile Include="CAMADAS\MODEL\RegistroCompra.cs" />
     <Compile Include="CAMADAS\MODEL\Compra.cs" />
     <Compile Include="CAMADAS\MODEL\Produto.cs" />
     <Compile Include="CAMADAS\MODEL\Cliente.cs" />
+    <Compile Include="Relatorios\Funcoes.cs" />
+    <Compile Include="Relatorios\relatoriosGerais.cs" />
     <Compile Include="View\Categoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,12 +82,6 @@
     </Compile>
     <Compile Include="View\Cliente.Designer.cs">
       <DependentUpon>Cliente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Compra.cs">
       <SubType>Form</SubType>
@@ -97,6 +97,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Home.designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,11 +115,20 @@
     <Compile Include="View\Produto.Designer.cs">
       <DependentUpon>Produto.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Sobre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Sobre.designer.cs">
+      <DependentUpon>Sobre.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\Categoria.resx">
+      <DependentUpon>Categoria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Cliente.resx">
       <DependentUpon>Cliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="View\Compra.resx">
+      <DependentUpon>Compra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Funcionario.resx">
       <DependentUpon>Funcionario.cs</DependentUpon>
@@ -127,6 +142,19 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Produto.resx">
+      <DependentUpon>Produto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Sobre.resx">
+      <DependentUpon>Sobre.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

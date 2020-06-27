@@ -7,6 +7,13 @@ C:\Tudo\Fema\2020\almir\06-29 - Trabalho .net mercadin\Mercado Thay and Lusca\ob
 C:\Tudo\Fema\2020\almir\06-29 - Trabalho .net mercadin\Mercado Thay and Lusca\obj\Debug\Mercado Thay and Lusca.csproj.CoreCompileInputs.cache
 C:\Tudo\Fema\2020\almir\06-29 - Trabalho .net mercadin\Mercado Thay and Lusca\obj\Debug\Mercado Thay and Lusca.exe
 C:\Tudo\Fema\2020\almir\06-29 - Trabalho .net mercadin\Mercado Thay and Lusca\obj\Debug\Mercado Thay and Lusca.pdb
-C:\Tudo\Fema\2020\almir\06-29 - Trabalho .net mercadin\Mercado Thay and Lusca\obj\Debug\Mercado_Thay_and_Lusca.Form1.resources
 C:\Tudo\Fema\2020\almir\06-29 - Trabalho .net mercadin\Mercado Thay and Lusca\obj\Debug\Mercado_Thay_and_Lusca.Cliente.resources
+C:\Tudo\Fema\2020\almir\06-29 - Trabalho .net mercadin\Mercado Thay and Lusca\obj\Debug\Mercado_Thay_and_Lusca.View.Compra.resources
+C:\Tudo\Fema\2020\almir\06-29 - Trabalho .net mercadin\Mercado Thay and Lusca\obj\Debug\Mercado_Thay_and_Lusca.View.Menu.resources
+C:\Tudo\Fema\2020\almir\06-29 - Trabalho .net mercadin\Mercado Thay and Lusca\obj\Debug\Mercado_Thay_and_Lusca.View.Categoria.resources
 C:\Tudo\Fema\2020\almir\06-29 - Trabalho .net mercadin\Mercado Thay and Lusca\obj\Debug\Mercado_Thay_and_Lusca.Funcionario.resources
+C:\Tudo\Fema\2020\almir\06-29 - Trabalho .net mercadin\Mercado Thay and Lusca\obj\Debug\Mercado_Thay_and_Lusca.View.Produto.resources
+C:\Tudo\Fema\2020\almir\06-29 - Trabalho .net mercadin\Mercado Thay and Lusca\bin\Debug\MaterialSkin.dll
+C:\Tudo\Fema\2020\almir\06-29 - Trabalho .net mercadin\Mercado Thay and Lusca\obj\Debug\Mercado_Thay_and_Lusca.View.Home.resources
+C:\Tudo\Fema\2020\almir\06-29 - Trabalho .net mercadin\Mercado Thay and Lusca\obj\Debug\Mercado_Thay_and_Lusca.View.Sobre.resources
+C:\Tudo\Fema\2020\almir\06-29 - Trabalho .net mercadin\Mercado Thay and Lusca\obj\Debug\Mercado Thay and Lusca.csproj.CopyComplete

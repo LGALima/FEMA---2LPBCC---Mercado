@@ -310,5 +310,105 @@ namespace Mercado_Thay_and_Lusca.CAMADAS.DAL
             }
             return registros;
         }
+
+        public List<MODEL.RegistroCompra> SelectRegistroCompraById(int id)
+        {
+            List<MODEL.RegistroCompra> registros = new List<MODEL.RegistroCompra>();
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "SELECT * FROM Registro_Compra WHERE id=@id";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@id", id);
+
+            try
+            {
+                conexao.Open();
+                SqlDataReader dados = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                while (dados.Read())
+                {
+                    MODEL.RegistroCompra registro = new MODEL.RegistroCompra();
+                    registro.id = Convert.ToInt32(dados["id"].ToString());
+                    registro.data = Convert.ToDateTime(dados["data"].ToString());
+                    registro.idCliente = Convert.ToInt32(dados["idCliente"].ToString());
+                    registro.totalPago = Convert.ToSingle(dados["total_pago"].ToString());
+                    registros.Add(registro);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Erro ao selecionar Registro de compra, tente novamente");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+            return registros;
+        }
+
+        public List<MODEL.Compra> SelectComprasRealizadasByIdRegistro(int idRegistro)
+        {
+            List<MODEL.Compra> lstCompras = new List<MODEL.Compra>();
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "SELECT * FROM Compra_efetuada WHERE idCompra=@idCompra";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@idCompra", idRegistro);
+
+            try
+            {
+                conexao.Open();
+                SqlDataReader dados = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                while (dados.Read())
+                {
+                    MODEL.Compra compra = new MODEL.Compra();
+                    compra.id = Convert.ToInt32(dados["id"].ToString());
+                    compra.idCliente = Convert.ToInt32(dados["idCliente"].ToString());
+                    compra.idProduto = Convert.ToInt32(dados["idProduto"].ToString());
+                    compra.idRegistroCompra = Convert.ToInt32(dados["idCompra"].ToString());
+                    compra.quantidade = Convert.ToInt32(dados["quantidade"].ToString());
+                    compra.total = Convert.ToSingle(dados["total"].ToString());
+                    lstCompras.Add(compra);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Erro ao selecionar Registro de compra, tente novamente");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+            return lstCompras;
+        }
+
+        public List<MODEL.RegistroCompra> SelectAllRegistroCompra()
+        {
+            List<MODEL.RegistroCompra> lstRegistros = new List<MODEL.RegistroCompra>();
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "SELECT * FROM Registro_Compra";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            try
+            {
+                conexao.Open();
+                SqlDataReader dados = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                while (dados.Read())
+                {
+                    MODEL.RegistroCompra registro = new MODEL.RegistroCompra();
+                    registro.id = Convert.ToInt32(dados["id"]);
+                    registro.data = Convert.ToDateTime(dados["data"].ToString());
+                    registro.idCliente = Convert.ToInt32(dados["idCliente"].ToString());
+                    registro.totalPago = Convert.ToSingle(dados["total_pago"].ToString());
+                    lstRegistros.Add(registro);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Erro ao listar os registros de compra");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+            return lstRegistros;
+        }
+        
     }
 }

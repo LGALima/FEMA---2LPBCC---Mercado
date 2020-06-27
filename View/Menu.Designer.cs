@@ -40,11 +40,11 @@
             this.produtosMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.compraMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.relatóriosMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.sobreMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.sairMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.relFuncionáriosMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sobreMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.sairMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -143,6 +143,7 @@
             this.compraMenu.Name = "compraMenu";
             this.compraMenu.Size = new System.Drawing.Size(87, 46);
             this.compraMenu.Text = "Compra";
+            this.compraMenu.Click += new System.EventHandler(this.compraMenu_Click);
             // 
             // relatóriosMenu
             // 
@@ -154,22 +155,6 @@
             this.relatóriosMenu.Name = "relatóriosMenu";
             this.relatóriosMenu.Size = new System.Drawing.Size(102, 46);
             this.relatóriosMenu.Text = "Relatórios";
-            // 
-            // sobreMenu
-            // 
-            this.sobreMenu.ForeColor = System.Drawing.Color.Maroon;
-            this.sobreMenu.Name = "sobreMenu";
-            this.sobreMenu.Size = new System.Drawing.Size(67, 46);
-            this.sobreMenu.Text = "Sobre";
-            this.sobreMenu.Click += new System.EventHandler(this.sobreMenu_Click);
-            // 
-            // sairMenu
-            // 
-            this.sairMenu.ForeColor = System.Drawing.Color.Maroon;
-            this.sairMenu.Name = "sairMenu";
-            this.sairMenu.Size = new System.Drawing.Size(56, 46);
-            this.sairMenu.Text = "Sair";
-            this.sairMenu.Click += new System.EventHandler(this.sairMenu_Click);
             // 
             // relFuncionáriosMenu
             // 
@@ -191,6 +176,22 @@
             this.vendasToolStripMenuItem.Size = new System.Drawing.Size(188, 26);
             this.vendasToolStripMenuItem.Text = "Vendas";
             this.vendasToolStripMenuItem.Click += new System.EventHandler(this.vendasToolStripMenuItem_Click);
+            // 
+            // sobreMenu
+            // 
+            this.sobreMenu.ForeColor = System.Drawing.Color.Maroon;
+            this.sobreMenu.Name = "sobreMenu";
+            this.sobreMenu.Size = new System.Drawing.Size(67, 46);
+            this.sobreMenu.Text = "Sobre";
+            this.sobreMenu.Click += new System.EventHandler(this.sobreMenu_Click);
+            // 
+            // sairMenu
+            // 
+            this.sairMenu.ForeColor = System.Drawing.Color.Maroon;
+            this.sairMenu.Name = "sairMenu";
+            this.sairMenu.Size = new System.Drawing.Size(56, 46);
+            this.sairMenu.Text = "Sair";
+            this.sairMenu.Click += new System.EventHandler(this.sairMenu_Click);
             // 
             // Menu
             // 

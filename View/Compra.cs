@@ -1,5 +1,6 @@
 ﻿using Mercado_Thay_and_Lusca.CAMADAS.DAL;
 using Mercado_Thay_and_Lusca.CAMADAS.MODEL;
+using Mercado_Thay_and_Lusca.Relatorios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -194,7 +195,7 @@ namespace Mercado_Thay_and_Lusca.View
         private void setarClienteNovoVisual()
         {
             txtNomeCliente.Text = this.clienteSalvo.nome;
-            txtSaldoCliente.Text = Math.Round(this.clienteSalvo.saldo, 2).ToString();
+            txtSaldoCliente.Text = string.Format("{0:C2}", this.clienteSalvo.saldo);
             txtEnderecoCliente.Text = this.clienteSalvo.endereco;
             pbFotoCliente.Image = new Bitmap(Conexao.getPathImagens() + @"Clientes/" + this.clienteSalvo.imagem);
 
@@ -314,7 +315,7 @@ namespace Mercado_Thay_and_Lusca.View
         {
             if(!lblIdCompraRealizada.Text.Equals(""))
             {
-
+                relatoriosGerais.relatorioVendaDetalhada(Convert.ToInt32(lblIdCompraRealizada.Text), this.clienteSalvo.id);
             } else
             {
                 MessageBox.Show("Selecione uma compra realizada!");

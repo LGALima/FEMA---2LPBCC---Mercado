@@ -11,7 +11,7 @@ namespace Mercado_Thay_and_Lusca.Relatórios
     {
         public static string diretorioPasta()
         {
-            string pasta = @"C:\Facul\dotNet\FEMA---2LPBCC---Mercado\Relatórios";
+            string pasta = @"C:\Tudo\Fema\2020\almir\06-29 - Trabalho .net mercadin\Relatorios";
             if (!Directory.Exists(pasta))
                 Directory.CreateDirectory(pasta);
             return pasta;

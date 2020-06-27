@@ -15,7 +15,7 @@ namespace Mercado_Thay_and_Lusca.CAMADAS.DAL
 
         public static string getPathImagens()
         {
-            return @"C:\Facul\dotNet\Imagens\";
+            return @"C:\Tudo\Fema\2020\almir\06-29 - Trabalho .net mercadin\IMAGENS\";
         }
     }
 }

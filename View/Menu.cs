@@ -1,5 +1,6 @@
 ﻿using MaterialSkin;
 using Mercado_Thay_and_Lusca.Relatórios;
+using Mercado_Thay_and_Lusca.Relatorios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -81,7 +82,14 @@ namespace Mercado_Thay_and_Lusca.View
 
         private void vendasToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            relatoriosGerais.relatorioVendas();
+        }
 
+        private void compraMenu_Click(object sender, EventArgs e)
+        {
+            Compra frmCompra = new Compra();
+            frmCompra.MdiParent = this;
+            frmCompra.Show();
         }
     }
 }

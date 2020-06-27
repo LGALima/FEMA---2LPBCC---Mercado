@@ -60,6 +60,15 @@
             this.btnFinalizarCompra = new System.Windows.Forms.Button();
             this.dgvCarrinho = new System.Windows.Forms.DataGridView();
             this.gbLoginPerfil = new System.Windows.Forms.GroupBox();
+            this.btnGerarRelatorioCompraRealizada = new System.Windows.Forms.Button();
+            this.txtPagoCompraRealizada = new System.Windows.Forms.TextBox();
+            this.txtDiaCompraRealizada = new System.Windows.Forms.TextBox();
+            this.lblIdCompraRealizada = new System.Windows.Forms.Label();
+            this.lblIdTextCompraRealizada = new System.Windows.Forms.Label();
+            this.lblValorPagoCompraRealizada = new System.Windows.Forms.Label();
+            this.lblDiaCompraRealizada = new System.Windows.Forms.Label();
+            this.dgvComprasRealizadas = new System.Windows.Forms.DataGridView();
+            this.lblComprasRealizadas = new System.Windows.Forms.Label();
             this.btnVerSenha = new System.Windows.Forms.Button();
             this.btnLogar = new System.Windows.Forms.Button();
             this.btnSairCliente = new System.Windows.Forms.Button();
@@ -74,15 +83,6 @@
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblSaldoUsuario = new System.Windows.Forms.Label();
             this.lblNomeCliente = new System.Windows.Forms.Label();
-            this.lblComprasRealizadas = new System.Windows.Forms.Label();
-            this.dgvComprasRealizadas = new System.Windows.Forms.DataGridView();
-            this.lblDiaCompraRealizada = new System.Windows.Forms.Label();
-            this.lblValorPagoCompraRealizada = new System.Windows.Forms.Label();
-            this.lblIdTextCompraRealizada = new System.Windows.Forms.Label();
-            this.lblIdCompraRealizada = new System.Windows.Forms.Label();
-            this.txtDiaCompraRealizada = new System.Windows.Forms.TextBox();
-            this.txtPagoCompraRealizada = new System.Windows.Forms.TextBox();
-            this.btnGerarRelatorioCompraRealizada = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -93,38 +93,41 @@
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarrinho)).BeginInit();
             this.gbLoginPerfil.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFotoCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComprasRealizadas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFotoCliente)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.PeachPuff;
             this.groupBox1.Controls.Add(this.txtPesquisarProduto);
             this.groupBox1.Controls.Add(this.rbProduto);
             this.groupBox1.Controls.Add(this.btnPesquisar);
             this.groupBox1.Controls.Add(this.rbCategoria);
             this.groupBox1.Controls.Add(this.rbTodos);
             this.groupBox1.Controls.Add(this.cbCategoria);
-            this.groupBox1.Location = new System.Drawing.Point(24, 113);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(24, 96);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(426, 74);
+            this.groupBox1.Size = new System.Drawing.Size(426, 91);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Pesquisar por Categoria";
+            this.groupBox1.Text = "Pesquisar";
             // 
             // txtPesquisarProduto
             // 
-            this.txtPesquisarProduto.Location = new System.Drawing.Point(211, 18);
+            this.txtPesquisarProduto.Location = new System.Drawing.Point(226, 29);
             this.txtPesquisarProduto.Name = "txtPesquisarProduto";
-            this.txtPesquisarProduto.Size = new System.Drawing.Size(196, 20);
+            this.txtPesquisarProduto.Size = new System.Drawing.Size(196, 22);
             this.txtPesquisarProduto.TabIndex = 5;
             // 
             // rbProduto
             // 
             this.rbProduto.AutoSize = true;
-            this.rbProduto.Location = new System.Drawing.Point(67, 19);
+            this.rbProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbProduto.Location = new System.Drawing.Point(68, 32);
             this.rbProduto.Name = "rbProduto";
-            this.rbProduto.Size = new System.Drawing.Size(62, 17);
+            this.rbProduto.Size = new System.Drawing.Size(68, 19);
             this.rbProduto.TabIndex = 4;
             this.rbProduto.TabStop = true;
             this.rbProduto.Text = "Produto";
@@ -133,7 +136,7 @@
             // 
             // btnPesquisar
             // 
-            this.btnPesquisar.Location = new System.Drawing.Point(332, 44);
+            this.btnPesquisar.Location = new System.Drawing.Point(345, 57);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(75, 23);
             this.btnPesquisar.TabIndex = 3;
@@ -144,9 +147,10 @@
             // rbCategoria
             // 
             this.rbCategoria.AutoSize = true;
-            this.rbCategoria.Location = new System.Drawing.Point(135, 19);
+            this.rbCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbCategoria.Location = new System.Drawing.Point(142, 32);
             this.rbCategoria.Name = "rbCategoria";
-            this.rbCategoria.Size = new System.Drawing.Size(70, 17);
+            this.rbCategoria.Size = new System.Drawing.Size(78, 19);
             this.rbCategoria.TabIndex = 2;
             this.rbCategoria.TabStop = true;
             this.rbCategoria.Text = "Categoria";
@@ -156,9 +160,10 @@
             // rbTodos
             // 
             this.rbTodos.AutoSize = true;
-            this.rbTodos.Location = new System.Drawing.Point(6, 19);
+            this.rbTodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbTodos.Location = new System.Drawing.Point(6, 30);
             this.rbTodos.Name = "rbTodos";
-            this.rbTodos.Size = new System.Drawing.Size(55, 17);
+            this.rbTodos.Size = new System.Drawing.Size(59, 19);
             this.rbTodos.TabIndex = 1;
             this.rbTodos.TabStop = true;
             this.rbTodos.Text = "Todos";
@@ -168,13 +173,14 @@
             // cbCategoria
             // 
             this.cbCategoria.FormattingEnabled = true;
-            this.cbCategoria.Location = new System.Drawing.Point(211, 17);
+            this.cbCategoria.Location = new System.Drawing.Point(226, 27);
             this.cbCategoria.Name = "cbCategoria";
-            this.cbCategoria.Size = new System.Drawing.Size(196, 21);
+            this.cbCategoria.Size = new System.Drawing.Size(196, 24);
             this.cbCategoria.TabIndex = 0;
             // 
             // dgvProdutos
             // 
+            this.dgvProdutos.BackgroundColor = System.Drawing.Color.AntiqueWhite;
             this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProdutos.Location = new System.Drawing.Point(24, 186);
             this.dgvProdutos.Name = "dgvProdutos";
@@ -184,6 +190,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.PeachPuff;
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.txtTotal);
             this.groupBox2.Controls.Add(this.btnCancelarCarrinho);
@@ -308,6 +315,7 @@
             // 
             // pbFotoProduto
             // 
+            this.pbFotoProduto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbFotoProduto.BackgroundImage")));
             this.pbFotoProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbFotoProduto.Location = new System.Drawing.Point(288, 19);
             this.pbFotoProduto.Name = "pbFotoProduto";
@@ -366,6 +374,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.Color.PeachPuff;
             this.groupBox3.Controls.Add(this.btnCancelarCompra);
             this.groupBox3.Controls.Add(this.btnFinalizarCompra);
             this.groupBox3.Controls.Add(this.dgvCarrinho);
@@ -398,14 +407,16 @@
             // 
             // dgvCarrinho
             // 
+            this.dgvCarrinho.BackgroundColor = System.Drawing.Color.AntiqueWhite;
             this.dgvCarrinho.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCarrinho.Location = new System.Drawing.Point(3, 16);
+            this.dgvCarrinho.Location = new System.Drawing.Point(0, 16);
             this.dgvCarrinho.Name = "dgvCarrinho";
-            this.dgvCarrinho.Size = new System.Drawing.Size(408, 150);
+            this.dgvCarrinho.Size = new System.Drawing.Size(419, 150);
             this.dgvCarrinho.TabIndex = 0;
             // 
             // gbLoginPerfil
             // 
+            this.gbLoginPerfil.BackColor = System.Drawing.Color.PeachPuff;
             this.gbLoginPerfil.Controls.Add(this.btnGerarRelatorioCompraRealizada);
             this.gbLoginPerfil.Controls.Add(this.txtPagoCompraRealizada);
             this.gbLoginPerfil.Controls.Add(this.txtDiaCompraRealizada);
@@ -435,6 +446,90 @@
             this.gbLoginPerfil.TabIndex = 4;
             this.gbLoginPerfil.TabStop = false;
             this.gbLoginPerfil.Text = "Login";
+            // 
+            // btnGerarRelatorioCompraRealizada
+            // 
+            this.btnGerarRelatorioCompraRealizada.Location = new System.Drawing.Point(292, 410);
+            this.btnGerarRelatorioCompraRealizada.Name = "btnGerarRelatorioCompraRealizada";
+            this.btnGerarRelatorioCompraRealizada.Size = new System.Drawing.Size(100, 40);
+            this.btnGerarRelatorioCompraRealizada.TabIndex = 30;
+            this.btnGerarRelatorioCompraRealizada.Text = "Gerar Relatório";
+            this.btnGerarRelatorioCompraRealizada.UseVisualStyleBackColor = true;
+            this.btnGerarRelatorioCompraRealizada.Click += new System.EventHandler(this.btnGerarRelatorioCompraRealizada_Click);
+            // 
+            // txtPagoCompraRealizada
+            // 
+            this.txtPagoCompraRealizada.Enabled = false;
+            this.txtPagoCompraRealizada.Location = new System.Drawing.Point(74, 433);
+            this.txtPagoCompraRealizada.Name = "txtPagoCompraRealizada";
+            this.txtPagoCompraRealizada.Size = new System.Drawing.Size(121, 20);
+            this.txtPagoCompraRealizada.TabIndex = 29;
+            // 
+            // txtDiaCompraRealizada
+            // 
+            this.txtDiaCompraRealizada.Enabled = false;
+            this.txtDiaCompraRealizada.Location = new System.Drawing.Point(74, 401);
+            this.txtDiaCompraRealizada.Name = "txtDiaCompraRealizada";
+            this.txtDiaCompraRealizada.Size = new System.Drawing.Size(121, 20);
+            this.txtDiaCompraRealizada.TabIndex = 20;
+            // 
+            // lblIdCompraRealizada
+            // 
+            this.lblIdCompraRealizada.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIdCompraRealizada.Location = new System.Drawing.Point(74, 362);
+            this.lblIdCompraRealizada.Name = "lblIdCompraRealizada";
+            this.lblIdCompraRealizada.Size = new System.Drawing.Size(32, 24);
+            this.lblIdCompraRealizada.TabIndex = 28;
+            // 
+            // lblIdTextCompraRealizada
+            // 
+            this.lblIdTextCompraRealizada.AutoSize = true;
+            this.lblIdTextCompraRealizada.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIdTextCompraRealizada.Location = new System.Drawing.Point(36, 362);
+            this.lblIdTextCompraRealizada.Name = "lblIdTextCompraRealizada";
+            this.lblIdTextCompraRealizada.Size = new System.Drawing.Size(32, 24);
+            this.lblIdTextCompraRealizada.TabIndex = 27;
+            this.lblIdTextCompraRealizada.Text = "ID:";
+            // 
+            // lblValorPagoCompraRealizada
+            // 
+            this.lblValorPagoCompraRealizada.AutoSize = true;
+            this.lblValorPagoCompraRealizada.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValorPagoCompraRealizada.Location = new System.Drawing.Point(9, 429);
+            this.lblValorPagoCompraRealizada.Name = "lblValorPagoCompraRealizada";
+            this.lblValorPagoCompraRealizada.Size = new System.Drawing.Size(59, 24);
+            this.lblValorPagoCompraRealizada.TabIndex = 26;
+            this.lblValorPagoCompraRealizada.Text = "Pago:";
+            // 
+            // lblDiaCompraRealizada
+            // 
+            this.lblDiaCompraRealizada.AutoSize = true;
+            this.lblDiaCompraRealizada.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDiaCompraRealizada.Location = new System.Drawing.Point(26, 396);
+            this.lblDiaCompraRealizada.Name = "lblDiaCompraRealizada";
+            this.lblDiaCompraRealizada.Size = new System.Drawing.Size(42, 24);
+            this.lblDiaCompraRealizada.TabIndex = 25;
+            this.lblDiaCompraRealizada.Text = "Dia:";
+            // 
+            // dgvComprasRealizadas
+            // 
+            this.dgvComprasRealizadas.BackgroundColor = System.Drawing.Color.AntiqueWhite;
+            this.dgvComprasRealizadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvComprasRealizadas.Location = new System.Drawing.Point(0, 209);
+            this.dgvComprasRealizadas.Name = "dgvComprasRealizadas";
+            this.dgvComprasRealizadas.Size = new System.Drawing.Size(398, 150);
+            this.dgvComprasRealizadas.TabIndex = 24;
+            this.dgvComprasRealizadas.DoubleClick += new System.EventHandler(this.dgvComprasRealizadas_DoubleClick);
+            // 
+            // lblComprasRealizadas
+            // 
+            this.lblComprasRealizadas.AutoSize = true;
+            this.lblComprasRealizadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblComprasRealizadas.Location = new System.Drawing.Point(4, 182);
+            this.lblComprasRealizadas.Name = "lblComprasRealizadas";
+            this.lblComprasRealizadas.Size = new System.Drawing.Size(175, 24);
+            this.lblComprasRealizadas.TabIndex = 23;
+            this.lblComprasRealizadas.Text = "Compras realizadas";
             // 
             // btnVerSenha
             // 
@@ -521,7 +616,7 @@
             // txtSaldoCliente
             // 
             this.txtSaldoCliente.Enabled = false;
-            this.txtSaldoCliente.Location = new System.Drawing.Point(118, 78);
+            this.txtSaldoCliente.Location = new System.Drawing.Point(118, 73);
             this.txtSaldoCliente.Name = "txtSaldoCliente";
             this.txtSaldoCliente.Size = new System.Drawing.Size(144, 20);
             this.txtSaldoCliente.TabIndex = 8;
@@ -529,7 +624,7 @@
             // txtNomeCliente
             // 
             this.txtNomeCliente.Enabled = false;
-            this.txtNomeCliente.Location = new System.Drawing.Point(118, 40);
+            this.txtNomeCliente.Location = new System.Drawing.Point(118, 36);
             this.txtNomeCliente.Name = "txtNomeCliente";
             this.txtNomeCliente.Size = new System.Drawing.Size(144, 20);
             this.txtNomeCliente.TabIndex = 7;
@@ -564,89 +659,6 @@
             this.lblNomeCliente.TabIndex = 5;
             this.lblNomeCliente.Text = "Nome:";
             // 
-            // lblComprasRealizadas
-            // 
-            this.lblComprasRealizadas.AutoSize = true;
-            this.lblComprasRealizadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblComprasRealizadas.Location = new System.Drawing.Point(4, 182);
-            this.lblComprasRealizadas.Name = "lblComprasRealizadas";
-            this.lblComprasRealizadas.Size = new System.Drawing.Size(175, 24);
-            this.lblComprasRealizadas.TabIndex = 23;
-            this.lblComprasRealizadas.Text = "Compras realizadas";
-            // 
-            // dgvComprasRealizadas
-            // 
-            this.dgvComprasRealizadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvComprasRealizadas.Location = new System.Drawing.Point(0, 209);
-            this.dgvComprasRealizadas.Name = "dgvComprasRealizadas";
-            this.dgvComprasRealizadas.Size = new System.Drawing.Size(392, 150);
-            this.dgvComprasRealizadas.TabIndex = 24;
-            this.dgvComprasRealizadas.DoubleClick += new System.EventHandler(this.dgvComprasRealizadas_DoubleClick);
-            // 
-            // lblDiaCompraRealizada
-            // 
-            this.lblDiaCompraRealizada.AutoSize = true;
-            this.lblDiaCompraRealizada.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDiaCompraRealizada.Location = new System.Drawing.Point(26, 396);
-            this.lblDiaCompraRealizada.Name = "lblDiaCompraRealizada";
-            this.lblDiaCompraRealizada.Size = new System.Drawing.Size(42, 24);
-            this.lblDiaCompraRealizada.TabIndex = 25;
-            this.lblDiaCompraRealizada.Text = "Dia:";
-            // 
-            // lblValorPagoCompraRealizada
-            // 
-            this.lblValorPagoCompraRealizada.AutoSize = true;
-            this.lblValorPagoCompraRealizada.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValorPagoCompraRealizada.Location = new System.Drawing.Point(9, 429);
-            this.lblValorPagoCompraRealizada.Name = "lblValorPagoCompraRealizada";
-            this.lblValorPagoCompraRealizada.Size = new System.Drawing.Size(59, 24);
-            this.lblValorPagoCompraRealizada.TabIndex = 26;
-            this.lblValorPagoCompraRealizada.Text = "Pago:";
-            // 
-            // lblIdTextCompraRealizada
-            // 
-            this.lblIdTextCompraRealizada.AutoSize = true;
-            this.lblIdTextCompraRealizada.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIdTextCompraRealizada.Location = new System.Drawing.Point(36, 362);
-            this.lblIdTextCompraRealizada.Name = "lblIdTextCompraRealizada";
-            this.lblIdTextCompraRealizada.Size = new System.Drawing.Size(32, 24);
-            this.lblIdTextCompraRealizada.TabIndex = 27;
-            this.lblIdTextCompraRealizada.Text = "ID:";
-            // 
-            // lblIdCompraRealizada
-            // 
-            this.lblIdCompraRealizada.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIdCompraRealizada.Location = new System.Drawing.Point(74, 362);
-            this.lblIdCompraRealizada.Name = "lblIdCompraRealizada";
-            this.lblIdCompraRealizada.Size = new System.Drawing.Size(32, 24);
-            this.lblIdCompraRealizada.TabIndex = 28;
-            // 
-            // txtDiaCompraRealizada
-            // 
-            this.txtDiaCompraRealizada.Enabled = false;
-            this.txtDiaCompraRealizada.Location = new System.Drawing.Point(74, 401);
-            this.txtDiaCompraRealizada.Name = "txtDiaCompraRealizada";
-            this.txtDiaCompraRealizada.Size = new System.Drawing.Size(121, 20);
-            this.txtDiaCompraRealizada.TabIndex = 20;
-            // 
-            // txtPagoCompraRealizada
-            // 
-            this.txtPagoCompraRealizada.Enabled = false;
-            this.txtPagoCompraRealizada.Location = new System.Drawing.Point(74, 433);
-            this.txtPagoCompraRealizada.Name = "txtPagoCompraRealizada";
-            this.txtPagoCompraRealizada.Size = new System.Drawing.Size(121, 20);
-            this.txtPagoCompraRealizada.TabIndex = 29;
-            // 
-            // btnGerarRelatorioCompraRealizada
-            // 
-            this.btnGerarRelatorioCompraRealizada.Location = new System.Drawing.Point(292, 410);
-            this.btnGerarRelatorioCompraRealizada.Name = "btnGerarRelatorioCompraRealizada";
-            this.btnGerarRelatorioCompraRealizada.Size = new System.Drawing.Size(100, 40);
-            this.btnGerarRelatorioCompraRealizada.TabIndex = 30;
-            this.btnGerarRelatorioCompraRealizada.Text = "Gerar Relatório";
-            this.btnGerarRelatorioCompraRealizada.UseVisualStyleBackColor = true;
-            this.btnGerarRelatorioCompraRealizada.Click += new System.EventHandler(this.btnGerarRelatorioCompraRealizada_Click);
-            // 
             // btnVoltar
             // 
             this.btnVoltar.Location = new System.Drawing.Point(12, 12);
@@ -669,10 +681,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(497, 37);
+            this.label7.BackColor = System.Drawing.Color.PeachPuff;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(602, 21);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(93, 24);
+            this.label7.Size = new System.Drawing.Size(131, 31);
             this.label7.TabIndex = 65;
             this.label7.Text = "Compras";
             // 
@@ -680,6 +693,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1357, 692);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnVoltar);
@@ -704,8 +719,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarrinho)).EndInit();
             this.gbLoginPerfil.ResumeLayout(false);
             this.gbLoginPerfil.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFotoCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComprasRealizadas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFotoCliente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
