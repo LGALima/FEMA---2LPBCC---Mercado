@@ -195,5 +195,80 @@ namespace Mercado_Thay_and_Lusca.CAMADAS.DAL
             }
             return lstClientes;
         }
+
+        public List<MODEL.Cliente> SelectByUsuarioAndSenha(string usuario, string senha)
+        {
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "SELECT * FROM Cliente WHERE usuario=@usuario and senha=@senha";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@usuario", usuario);
+            cmd.Parameters.AddWithValue("@senha", senha);
+
+            List<MODEL.Cliente> lstClientes = new List<MODEL.Cliente>();
+
+            try
+            {
+                conexao.Open();
+                SqlDataReader dados = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                while (dados.Read())
+                {
+                    MODEL.Cliente cliente = new MODEL.Cliente();
+                    cliente.id = Convert.ToInt32(dados["id"].ToString());
+                    cliente.usuario = dados["usuario"].ToString();
+                    cliente.senha = dados["senha"].ToString();
+                    cliente.nome = dados["nome"].ToString();
+                    cliente.endereco = dados["endereco"].ToString();
+                    cliente.saldo = Convert.ToSingle(dados["saldo"].ToString());
+                    cliente.imagem = dados["imagem"].ToString();
+                    lstClientes.Add(cliente);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Erro ao buscar clientes, tente denovo");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+            return lstClientes;
+        }
+
+        public int testarExisteUsuario(string usuario)
+        {
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "SELECT * FROM Cliente WHERE usuario=@usuario";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@usuario", usuario);
+
+            List<MODEL.Cliente> lstClientes = new List<MODEL.Cliente>();
+
+            try
+            {
+                conexao.Open();
+                SqlDataReader dados = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                while (dados.Read())
+                {
+                    MODEL.Cliente cliente = new MODEL.Cliente();
+                    cliente.id = Convert.ToInt32(dados["id"].ToString());
+                    cliente.usuario = dados["usuario"].ToString();
+                    cliente.senha = dados["senha"].ToString();
+                    cliente.nome = dados["nome"].ToString();
+                    cliente.endereco = dados["endereco"].ToString();
+                    cliente.saldo = Convert.ToSingle(dados["saldo"].ToString());
+                    cliente.imagem = dados["imagem"].ToString();
+                    lstClientes.Add(cliente);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Erro ao buscar clientes, tente denovo");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+            return lstClientes.Count;
+        }
     }
 }

@@ -10,16 +10,14 @@ namespace Mercado_Thay_and_Lusca.CAMADAS.MODEL
     {
         public int id { get; set; }
 
-        public NotaFiscal notaFiscal { get; set; }
+        public int idCliente { get; set; }
 
-        public Produto produto { get; set; }
+        public int idProduto { get; set; }
+
+        public int idRegistroCompra { get; set; }
 
         public int quantidade { get; set; }
 
-        public float valorBruto { get; set; }
-
-        public float desconto { get; set; }
-
-        public float valorPago { get; set; }
+        public float total { get; set; }
     }
 }

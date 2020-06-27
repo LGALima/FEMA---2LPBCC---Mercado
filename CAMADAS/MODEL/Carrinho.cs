@@ -6,13 +6,16 @@ using System.Threading.Tasks;
 
 namespace Mercado_Thay_and_Lusca.CAMADAS.MODEL
 {
-    public class NotaFiscal
+    public class Carrinho
     {
         public int id { get; set; }
 
-        public Cliente cliente { get; set; }
+        public int idCliente { get; set; }
 
-        public DateTime data { get; set; }
+        public int idProduto { get; set; }
 
+        public int quantidade { get; set; }
+
+        public float total { get; set; }
     }
 }

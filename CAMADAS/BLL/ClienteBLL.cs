@@ -49,7 +49,14 @@ namespace Mercado_Thay_and_Lusca.CAMADAS.BLL
             } else
             {
                 DAL.ClienteDAL cliDal = new DAL.ClienteDAL();
-                cliDal.Insert(cliente, imagem);
+                if(cliDal.testarExisteUsuario(cliente.usuario) == 0)
+                {
+                    cliDal.Insert(cliente, imagem);
+                } else
+                {
+                    MessageBox.Show("Usuario já existe!");
+                }
+                    
             }
         }
 
@@ -115,5 +122,29 @@ namespace Mercado_Thay_and_Lusca.CAMADAS.BLL
             DAL.ClienteDAL cliDal = new DAL.ClienteDAL();
             return cliDal.SelectById(id);
         }
+
+        public List<MODEL.Cliente> SelectByUsuarioAndSenha(string usuario, string senha)
+        {
+            string erro = "";
+            if(usuario.Equals(""))
+            {
+                erro += "\tUsuário não pode ser vazio\n";
+            }
+            if(senha.Equals(""))
+            {
+                erro += "\tSenha não pode ser vazia\n";
+            }
+            if(erro.Equals(""))
+            {
+                DAL.ClienteDAL dalCli = new DAL.ClienteDAL();
+                return dalCli.SelectByUsuarioAndSenha(usuario, senha);
+            } else
+            {
+                MessageBox.Show("Erros encontrados: \n" + erro);
+                return null;
+            }
+        }
+
+        
     }
 }

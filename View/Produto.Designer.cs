@@ -328,6 +328,7 @@
             // 
             // btnMinus
             // 
+            this.btnMinus.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMinus.BackgroundImage")));
             this.btnMinus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnMinus.Location = new System.Drawing.Point(435, 198);
             this.btnMinus.Name = "btnMinus";
@@ -338,6 +339,7 @@
             // 
             // btnPlus
             // 
+            this.btnPlus.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPlus.BackgroundImage")));
             this.btnPlus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPlus.Location = new System.Drawing.Point(506, 198);
             this.btnPlus.Name = "btnPlus";
@@ -407,6 +409,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1357, 692);
             this.Controls.Add(this.gpbPesquisa);
             this.Controls.Add(this.btnVoltar);

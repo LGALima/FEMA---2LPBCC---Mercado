@@ -131,7 +131,6 @@ namespace Mercado_Thay_and_Lusca.View
                 {
                     string[] partes = carregarImagemProduto.SafeFileName.Split('.');
                     produto.imagem = produto.produto + "." + partes[partes.Length - 1];
-                    MessageBox.Show(produto.imagem);
                     bllProd.Insert(produto, pbFotoProduto.Image);
                     limparCampos();
                 }
