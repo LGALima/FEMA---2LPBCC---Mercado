@@ -42,6 +42,9 @@
             this.relatóriosMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.sairMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.relFuncionáriosMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -143,6 +146,10 @@
             // 
             // relatóriosMenu
             // 
+            this.relatóriosMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.relFuncionáriosMenu,
+            this.clientesToolStripMenuItem,
+            this.vendasToolStripMenuItem});
             this.relatóriosMenu.ForeColor = System.Drawing.Color.Maroon;
             this.relatóriosMenu.Name = "relatóriosMenu";
             this.relatóriosMenu.Size = new System.Drawing.Size(102, 46);
@@ -163,6 +170,27 @@
             this.sairMenu.Size = new System.Drawing.Size(56, 46);
             this.sairMenu.Text = "Sair";
             this.sairMenu.Click += new System.EventHandler(this.sairMenu_Click);
+            // 
+            // relFuncionáriosMenu
+            // 
+            this.relFuncionáriosMenu.Name = "relFuncionáriosMenu";
+            this.relFuncionáriosMenu.Size = new System.Drawing.Size(188, 26);
+            this.relFuncionáriosMenu.Text = "Funcionários";
+            this.relFuncionáriosMenu.Click += new System.EventHandler(this.relFuncionáriosMenu_Click);
+            // 
+            // clientesToolStripMenuItem
+            // 
+            this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(188, 26);
+            this.clientesToolStripMenuItem.Text = "Clientes";
+            this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
+            // 
+            // vendasToolStripMenuItem
+            // 
+            this.vendasToolStripMenuItem.Name = "vendasToolStripMenuItem";
+            this.vendasToolStripMenuItem.Size = new System.Drawing.Size(188, 26);
+            this.vendasToolStripMenuItem.Text = "Vendas";
+            this.vendasToolStripMenuItem.Click += new System.EventHandler(this.vendasToolStripMenuItem_Click);
             // 
             // Menu
             // 
@@ -202,5 +230,8 @@
         private System.Windows.Forms.ToolStripMenuItem sobreMenu;
         private System.Windows.Forms.ToolStripMenuItem sairMenu;
         private System.Windows.Forms.ToolStripMenuItem produtosMenu;
+        private System.Windows.Forms.ToolStripMenuItem relFuncionáriosMenu;
+        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vendasToolStripMenuItem;
     }
 }

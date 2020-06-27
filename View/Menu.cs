@@ -1,4 +1,5 @@
 ﻿using MaterialSkin;
+using Mercado_Thay_and_Lusca.Relatórios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -66,6 +67,21 @@ namespace Mercado_Thay_and_Lusca.View
             Sobre frmSobre = new Sobre();
             frmSobre.MdiParent = this;
             frmSobre.Show();
+        }
+
+        private void relFuncionáriosMenu_Click(object sender, EventArgs e)
+        {
+            relatoriosGerais.relatorioFuncionarios();
+        }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            relatoriosGerais.relatorioClientes();
+        }
+
+        private void vendasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

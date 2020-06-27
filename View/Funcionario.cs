@@ -1,4 +1,5 @@
 ﻿using Mercado_Thay_and_Lusca.CAMADAS.DAL;
+using Mercado_Thay_and_Lusca.Relatórios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -238,6 +239,11 @@ namespace Mercado_Thay_and_Lusca
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            relatoriosGerais.relatorioFuncionarios();
         }
     }
 
